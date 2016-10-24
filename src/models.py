@@ -10,5 +10,7 @@ class Event(models.Model):
 	event_venue = models.CharField(max_length = 75)
 	event_fees = models.IntegerField( default = 0)
 	event_steats = models.IntegerField( default = 36)
-	event_organizer_details = models.CharField(max_length= 10)
+	event_organizer_details = models.CharField(max_length= 140)
 
+	def __str__(self):
+		return self.event_name + "; " + self.event_venue + "; " + str(self.event_date)
